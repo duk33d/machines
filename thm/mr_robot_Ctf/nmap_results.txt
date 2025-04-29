@@ -1,0 +1,92 @@
+# Nmap 7.94SVN scan initiated Fri Nov 22 05:42:29 2024 as: /usr/lib/nmap/nmap --privileged -A -sV -O -Pn -v -p- -d -oN nmap_results.txt 10.10.141.211
+--------------- Timing report ---------------
+  hostgroups: min 1, max 100000
+  rtt-timeouts: init 1000, min 100, max 10000
+  max-scan-delay: TCP 1000, UDP 1000, SCTP 1000
+  parallelism: min 0, max 0
+  max-retries: 10, host-timeout: 0
+  min-rate: 0, max-rate: 0
+---------------------------------------------
+Packet capture filter (device tun0): dst host 10.2.21.184 and (icmp or icmp6 or ((tcp) and (src host 10.10.141.211)))
+Packet capture filter (device tun0): dst host 10.2.21.184 and (icmp or (tcp and (src host 10.10.141.211)))
+OS detection timingRatio() == (1732247635.959 - 1732247635.458) * 1000 / 500 == 1.000
+OS detection timingRatio() == (1732247640.085 - 1732247639.585) * 1000 / 500 == 1.002
+Nmap scan report for 10.10.141.211 (10.10.141.211)
+Host is up, received user-set (0.33s latency).
+Scanned at 2024-11-22 05:42:29 EET for 716s
+Not shown: 65532 filtered tcp ports (no-response)
+PORT    STATE  SERVICE  REASON         VERSION
+22/tcp  closed ssh      reset ttl 61
+80/tcp  open   http     syn-ack ttl 61 Apache httpd
+|_http-server-header: Apache
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-favicon: Unknown favicon MD5: D41D8CD98F00B204E9800998ECF8427E
+|_http-title: Site doesn't have a title (text/html).
+443/tcp open   ssl/http syn-ack ttl 61 Apache httpd
+| http-methods: 
+|_  Supported Methods: GET HEAD POST
+| http-cisco-anyconnect: 
+|_  ERROR: Not a Cisco ASA or unsupported version
+|_http-server-header: Apache
+| ssl-date: 
+|_  ERROR: Unable to obtain data from the target
+|_http-title: 400 Bad Request
+| ssl-cert: Subject: commonName=www.example.com
+| Issuer: commonName=www.example.com
+| Public Key type: rsa
+| Public Key bits: 1024
+| Signature Algorithm: sha1WithRSAEncryption
+| Not valid before: 2015-09-16T10:45:03
+| Not valid after:  2025-09-13T10:45:03
+| MD5:   3c16:3b19:87c3:42ad:6634:c1c9:d0aa:fb97
+| SHA-1: ef0c:5fa5:931a:09a5:687c:a2c2:80c4:c792:07ce:f71b
+| -----BEGIN CERTIFICATE-----
+| MIIBqzCCARQCCQCgSfELirADCzANBgkqhkiG9w0BAQUFADAaMRgwFgYDVQQDDA93
+| d3cuZXhhbXBsZS5jb20wHhcNMTUwOTE2MTA0NTAzWhcNMjUwOTEzMTA0NTAzWjAa
+| MRgwFgYDVQQDDA93d3cuZXhhbXBsZS5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0A
+| MIGJAoGBANlxG/38e8Dy/mxwZzBboYF64tu1n8c2zsWOw8FFU0azQFxv7RPKcGwt
+| sALkdAMkNcWS7J930xGamdCZPdoRY4hhfesLIshZxpyk6NoYBkmtx+GfwrrLh6mU
+| yvsyno29GAlqYWfffzXRoibdDtGTn9NeMqXobVTTKTaR0BGspOS5AgMBAAEwDQYJ
+| KoZIhvcNAQEFBQADgYEASfG0dH3x4/XaN6IWwaKo8XeRStjYTy/uBJEBUERlP17X
+| 1TooZOYbvgFAqK8DPOl7EkzASVeu0mS5orfptWjOZ/UWVZujSNj7uu7QR4vbNERx
+| ncZrydr7FklpkIN5Bj8SYc94JI9GsrHip4mpbystXkxncoOVESjRBES/iatbkl0=
+|_-----END CERTIFICATE-----
+Device type: general purpose|specialized|storage-misc|WAP|broadband router
+Running (JUST GUESSING): Linux 5.X|3.X|4.X|2.6.X (90%), Crestron 2-Series (87%), HP embedded (87%), Asus embedded (86%)
+OS CPE: cpe:/o:linux:linux_kernel:5.4 cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4 cpe:/o:crestron:2_series cpe:/h:hp:p2000_g3 cpe:/o:linux:linux_kernel:2.6.22 cpe:/h:asus:rt-n56u cpe:/o:linux:linux_kernel:3.4
+OS fingerprint not ideal because: Didn't receive UDP response. Please try again with -sSU
+Aggressive OS guesses: Linux 5.4 (90%), Linux 3.10 - 3.13 (89%), Linux 3.10 - 4.11 (88%), Linux 3.12 (88%), Linux 3.13 (88%), Linux 3.13 or 4.2 (88%), Linux 3.2 - 3.5 (88%), Linux 3.2 - 3.8 (88%), Linux 4.2 (88%), Linux 4.4 (88%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.94SVN%E=4%D=11/22%OT=80%CT=22%CU=%PV=Y%DS=4%DC=T%G=N%TM=67400071%P=x86_64-pc-linux-gnu)
+SEQ(SP=103%GCD=1%ISR=10C%TI=Z%CI=I%II=I%TS=8)
+SEQ(SP=105%GCD=1%ISR=10B%TI=Z%CI=I%II=I%TS=8)
+OPS(O1=M508ST11NW7%O2=M508ST11NW7%O3=M508NNT11NW7%O4=M508ST11NW7%O5=M508ST11NW7%O6=M508ST11)
+WIN(W1=68DF%W2=68DF%W3=68DF%W4=68DF%W5=68DF%W6=68DF)
+ECN(R=Y%DF=Y%TG=40%W=6903%O=M508NNSNW7%CC=Y%Q=)
+T1(R=Y%DF=Y%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=Y%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=N)
+U1(R=N)
+IE(R=Y%DFI=N%TG=40%CD=S)
+
+Uptime guess: 0.010 days (since Fri Nov 22 05:39:55 2024)
+Network Distance: 4 hops
+TCP Sequence Prediction: Difficulty=259 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+TRACEROUTE (using port 22/tcp)
+HOP RTT       ADDRESS
+1   303.42 ms 10.2.0.1 (10.2.0.1)
+2   ...
+3   ...
+4   331.73 ms 10.10.141.211 (10.10.141.211)
+
+Read from /usr/share/nmap: nmap-os-db nmap-protocols nmap-service-probes nmap-services.
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Nov 22 05:54:25 2024 -- 1 IP address (1 host up) scanned in 716.19 seconds
